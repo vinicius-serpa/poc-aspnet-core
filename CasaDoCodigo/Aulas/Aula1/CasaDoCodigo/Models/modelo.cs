@@ -23,8 +23,10 @@ namespace CasaDoCodigo.Models
 
         [Required]
         public string Codigo { get; private set; }
+
         [Required]
         public string Nome { get; private set; }
+
         [Required]
         public decimal Preco { get; private set; }
 
@@ -43,22 +45,31 @@ namespace CasaDoCodigo.Models
         }
 
         public virtual Pedido Pedido { get; set; }
+
         [Required]
         public string Nome { get; set; } = "";
+
         [Required]
         public string Email { get; set; } = "";
+
         [Required]
         public string Telefone { get; set; } = "";
+
         [Required]
         public string Endereco { get; set; } = "";
+
         [Required]
         public string Complemento { get; set; } = "";
+
         [Required]
         public string Bairro { get; set; } = "";
+
         [Required]
         public string Municipio { get; set; } = "";
+
         [Required]
         public string UF { get; set; } = "";
+
         [Required]
         public string CEP { get; set; } = "";
     }
@@ -67,10 +78,13 @@ namespace CasaDoCodigo.Models
     {   
         [Required]
         public Pedido Pedido { get; private set; }
+
         [Required]
         public Produto Produto { get; private set; }
+
         [Required]
         public int Quantidade { get; private set; }
+
         [Required]
         public decimal PrecoUnitario { get; private set; }
 
@@ -101,6 +115,7 @@ namespace CasaDoCodigo.Models
         }
 
         public List<ItemPedido> Itens { get; private set; } = new List<ItemPedido>();
+
         [Required]
         public virtual Cadastro Cadastro { get; private set; }
     }
