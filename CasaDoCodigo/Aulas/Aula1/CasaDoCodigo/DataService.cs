@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CasaDoCodigo.Models;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,15 @@ namespace CasaDoCodigo
 
             var json = File.ReadAllText("livros.json");
             var livros = JsonConvert.DeserializeObject<List<Livro>>(json);
+
+            foreach (var livro in livros)
+            {
+                // add data in memory
+                contexto.Set<Produto>().Add(new Produto(livro.Codigo, livro.Nome, livro.Preco));
+            }
+
+            // save memory data into database
+            contexto.SaveChanges();
         }
     }
 
