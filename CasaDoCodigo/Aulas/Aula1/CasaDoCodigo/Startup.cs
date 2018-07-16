@@ -57,7 +57,7 @@ namespace CasaDoCodigo
             });
 
             // serviceProvider.GetService<ApplicationContext>().Database.Migrate();
-            serviceProvider.GetService<DataService>().InicializaDB();
+            serviceProvider.GetService<IDataService>().InicializaDB();
         }
     }    
 }
