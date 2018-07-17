@@ -25,6 +25,10 @@ namespace CasaDoCodigo
         {
             services.AddMvc();
 
+            // Add session with memory resource
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+
             // Set Context to use SQL Server with Default connection string defined into appsettings.json
             string connectionString = Configuration.GetConnectionString("Default");
             services.AddDbContext<ApplicationContext>(options => 
@@ -53,6 +57,8 @@ namespace CasaDoCodigo
             }
 
             app.UseStaticFiles();
+
+            app.UseSession();
 
             app.UseMvc(routes =>
             {
