@@ -35,8 +35,8 @@
                                     <div class="produto-nome">@produto.Nome</div>
                                     <div><h4><strong>R$ @produto.Preco</strong></h4></div>
                                     <div class="text-center">
-                                        <!-- asp-controller and asp-action are tag helpers that redirect to a controller -->
-                                        <a asp-controller="pedido" asp-action="carrinho" class="btn btn-success">Adicionar</a>
+                                        <!-- asp-controller and asp-action are anchor-taghelpers that redirect to a controller -->
+                                        <a asp-action="carrinho" asp-route-codigo="@produto.Codigo" class="btn btn-success">Adicionar</a>
                                     </div>
                                 </div>
                             </div>
