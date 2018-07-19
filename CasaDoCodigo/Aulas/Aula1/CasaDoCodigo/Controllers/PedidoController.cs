@@ -32,7 +32,7 @@ namespace CasaDoCodigo.Controllers
             }
 
             Pedido pedido = pedidoRepository.GetPedido();
-            return View(pedido);
+            return View(pedido.Itens);
         }
 
         public IActionResult Cadastro()
@@ -42,7 +42,8 @@ namespace CasaDoCodigo.Controllers
 
         public IActionResult Resumo()
         {
-            return View();
+            var pedido = pedidoRepository.GetPedido();
+            return View(pedido);
         }
     }
 }
