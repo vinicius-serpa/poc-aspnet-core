@@ -28,7 +28,7 @@
 
         @foreach (var item in Model)
         {
-            <div class="row row-center linha-produto">
+            <div class="row row-center linha-produto" item-id="@(item.Id)">
                 <div class="col-md-3">
                     <img class="img-produto-carrinho" src="/images/produtos/large_@(item.Produto.Codigo).jpg" />
                 </div>
@@ -44,7 +44,7 @@
                         <input type="text" value="@(item.Quantidade)"
                                class="form-control text-center" />
                         <span class="input-group-btn">
-                            <button class="btn btn-default">
+                            <button class="btn btn-default" onclick="clickIncremento(this)">
                                 <span class="glyphicon-plus"></span>
                             </button>
                         </span>
@@ -80,9 +80,22 @@
             <a class="btn btn-success" asp-action="carrossel">
                 Adicionar Produtos
             </a>
-            <a class="btn btn-success" asp-action="resumo">                
+            <a class="btn btn-success" asp-action="resumo">
                 Finalizar Pedido
             </a>
         </div>
     </div>
 </div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        function clickIncremento(btn) {
+            let linhaDoItem = $(btn).parents('[item-id]'); // busca para cima
+            let itemId = linhaDoItem.attr("item-id");
+            let novaQtde = $(linhaDoItem).find('input').val(); // busca para baixo
+            debugger;
+        }
+    </script>
+}
+
