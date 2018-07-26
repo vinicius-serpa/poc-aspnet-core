@@ -74,6 +74,7 @@ namespace CasaDoCodigo.Models
         public string CEP { get; set; } = "";
     }
 
+    [DataContract]
     public class ItemPedido : BaseModel
     {   
         [Required]
@@ -83,6 +84,7 @@ namespace CasaDoCodigo.Models
         public Produto Produto { get; private set; }
 
         [Required]
+        [DataMember]
         public int Quantidade { get; private set; }
 
         [Required]
