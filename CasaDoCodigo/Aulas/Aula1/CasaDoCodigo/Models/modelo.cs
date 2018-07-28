@@ -90,6 +90,17 @@ namespace CasaDoCodigo.Models
         [Required]
         public decimal PrecoUnitario { get; private set; }
 
+        /*
+         * The code " => Quantidade * PrecoUnitario is the same of a get with custom return
+        [DataMember]
+        public decimal Subtotal
+        {
+            get
+            {
+                return Quantidade * PrecoUnitario;
+            }
+        }
+        */
         [DataMember]
         public decimal Subtotal => Quantidade * PrecoUnitario;
 
