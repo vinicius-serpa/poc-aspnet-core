@@ -87,6 +87,12 @@ namespace CasaDoCodigo.Repositories
             if (itemPedidoDb != null)
             {
                 itemPedidoDb.AtualizaQuantidade(itemPedido.Quantidade);
+
+                if (itemPedido.Quantidade == 0)
+                {
+                    itemPedidoRepository.RemoveItemPedido(itemPedido.Id);
+                }
+
                 contexto.SaveChanges();
 
                 var carrinhoViewModel = new CarrinhoViewModel(GetPedido().Itens);

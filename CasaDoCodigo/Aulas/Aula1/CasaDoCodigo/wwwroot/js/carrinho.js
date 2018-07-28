@@ -43,7 +43,6 @@ class Carrinho {
             let linhaDoItem = $('[item-id=' + itemPedido.id + ']');
             linhaDoItem.find('input').val(itemPedido.quantidade);
             linhaDoItem.find('[subtotal]').html((itemPedido.subtotal).duasCasas());
-            console.log(response);
         });
     }
 }
