@@ -48,6 +48,7 @@ class Carrinho {
             linhaDoItem.find('[subtotal]').html((itemPedido.subtotal).duasCasas());
 
             $('[numero-itens]').html('Total: ' + carrinhoViewModel.itens.length + ' itens');
+            $('[total]').html((carrinhoViewModel.total).duasCasas());
 
             if (itemPedido.quantidade == 0) {
                 linhaDoItem.remove();
