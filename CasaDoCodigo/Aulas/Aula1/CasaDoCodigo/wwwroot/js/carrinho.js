@@ -39,10 +39,19 @@ class Carrinho {
             contentType: 'application/json',
             data: JSON.stringify(data)
         }).done(function (response) {
+
             let itemPedido = response.itemPedido;
+            let carrinhoViewModel = response.carrinhoViewModel;
+
             let linhaDoItem = $('[item-id=' + itemPedido.id + ']');
             linhaDoItem.find('input').val(itemPedido.quantidade);
             linhaDoItem.find('[subtotal]').html((itemPedido.subtotal).duasCasas());
+
+            $('[numero-itens]').html('Total: ' + carrinhoViewModel.itens.length + ' itens');
+
+            if (itemPedido.quantidade == 0) {
+                linhaDoItem.remove();
+            }
         });
     }
 }
