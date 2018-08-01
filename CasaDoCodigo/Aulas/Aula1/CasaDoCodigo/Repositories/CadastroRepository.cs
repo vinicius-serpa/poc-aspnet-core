@@ -8,7 +8,7 @@ namespace CasaDoCodigo.Repositories
 {
     public interface ICadastroRepository
     {
-
+        Cadastro Update(int cadastroId, Cadastro novoCadastro);
     }
 
     public class CadastroRepository : BaseRepository<Cadastro>, ICadastroRepository
@@ -16,6 +16,11 @@ namespace CasaDoCodigo.Repositories
         public CadastroRepository(ApplicationContext contexto) : base(contexto)
         {
 
+        }
+
+        public Cadastro Update(int cadastroId, Cadastro novoCadastro)
+        {
+            throw new NotImplementedException();
         }
     }
 }
